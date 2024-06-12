@@ -1,0 +1,33 @@
+{
+  "name": "rockingUT",
+  "description": "Your Extension Description",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["http://*/*","https://*/*","<all_urls>"],
+      "css" : []
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "system.cpu",
+    "system.memory",
+    "system.storage",
+    "system.display",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
